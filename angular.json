@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "exercise3:build"
+            "browserTarget": "exercise3:build",
+            "port": 4000
           },
           "configurations": {
             "production": {

@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!---<div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,6 +16,51 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul>-->
+<body style="background-color: burlywood">
+<div class="app">
+  <h1>MY LIBRARY</h1>
+  <table align="center">
+    <tr>
+      <th>
+          Title
+      </th>
+      <th>
+          Author
+      </th>
+    </tr>
+    <tr>
+        <td><input type="text"  (input)="addtitle($event)"></td>
+        <td><input type="text"  (input)="addauthor($event)"></td>
+        <td><button class="but" (click)="Addbook($event)">Add</button></td>
+    </tr>
+  </table>
+  <br><br>
+  <table align="center" border="2" cellpadding=30px>
+    <tr>
+      <th>title</th>
+      <th>author</th>
+      <th>Delete</th>
+    </tr>
+    <!-- <tr>
+      <td>Data Science</td>
+      <td>John Doe</td>
+      <td><button (click)="Deletebook1($event)">x</button></td>
+    </tr>
+    <tr>
+      <td>Big Data</td>
+      <td>Rao Ramesh</td>
+      <td><button (click)="Deletebook2($event)">x</button></td>
+    </tr> -->
+    <tr *ngFor="let i of books;let in=index">
+      <td> {{i.title}}</td>
+      <td>{{i.author}}</td>
+      <td><button (click)="delete(in)">x</button></td>
+    </tr>
+  </table>
+
+</div>
+</body>
+
 
 <router-outlet></router-outlet>
